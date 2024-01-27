@@ -16,7 +16,8 @@ item.toLowerCase().replace(/\s+/g, "").includes(query.toLocaleLowerCase().replac
 )))
   
     return (
-    <div className='search-manufacturer'><Combobox>
+    <div className='search-manufacturer'>
+        <Combobox value={manufacturer} onChange={setManufacturer}>
         <div className='relative w-full'>
             <Combobox.Button className="absolute top-[14]">
                 <Image
