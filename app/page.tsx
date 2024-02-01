@@ -23,7 +23,7 @@ export default async function Home() {
   </div>
 </div>
 
-{!isDataEmpty}?(
+{!isDataEmpty?(
   <section>
     <div className="home__cars-wrapper">
       {allCars?.map((car)=> (
@@ -38,7 +38,7 @@ export default async function Home() {
     </h2>
     <p>{allCars?.message}</p>
   </div>
-)
+)}
       </div>
     </main>
   );
