@@ -1,11 +1,12 @@
 import { CarCard, CustomFilter, Hero, SearchBar } from "@/components";
 import { fetchCars } from "@/utils";
 import Image from "next/image";
+import { CarProps, FilterProps } from "@/types";
 
-export default async function Home({ searchParams }) {
+export default async function Home(searchParams: FilterProps) {
   const allCars = await fetchCars({
     manufacturer: searchParams.manufacturer || "",
-    year: searchParams.year || 2024,
+    year: searchParams.year || 2023, //changed to 2023 no cars found for the year 2024 with this api
     fuel: searchParams.fuel || "",
     limit: searchParams.limit || 10,
     model: searchParams.model || "",
@@ -23,8 +24,8 @@ export default async function Home({ searchParams }) {
         <div className="home__filters">
           <SearchBar />
           <div className="home__filter-container">
-            <CustomFilter title="fuel" />
-            <CustomFilter title="year" />
+            {/* <CustomFkilter title="fuel" /> */}
+            {/* <CustomFilter title="year" /> */}
           </div>
         </div>
 
